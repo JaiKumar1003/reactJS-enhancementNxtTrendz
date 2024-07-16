@@ -52,55 +52,214 @@
 }
 
 @media screen and (min-width: 768px) {
-.cart-summary-card {
+  .cart-summary-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+  }
+
+  .cart-summary-price-count-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+  }
+
+  .cart-summary-total-price {
+    color: #616e7c;
+    font-family: 'Roboto';
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+
+  .cart-summary-span-el {
+    color: #171f46;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .cart-summary-total-count {
+    color: #616e7c;
+    font-family: 'Roboto';
+    font-size: 16px;
+    margin-top: 0px;
+  }
+
+  .cart-summary-checkout-button {
+    background-color: #0b69ff;
+    border: none;
+    border-radius: 4px;
+    color: #ffffff;
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-weight: 500;
+    height: 40px;
+    width: 40%;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    outline: none;
+  }
+}
+
+.modal {
+  background-color: #1c1a1a33;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  width: 100%;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
 }
 
-.cart-summary-price-count-card {
+.payment-card {
+  background-color: #ffffff;
+  height: 100vh;
+  width: 100vw;
+  font-size: 18px;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  width: 100%;
-}
-
-.cart-summary-total-price {
-  color: #616e7c;
-  font-family: 'Roboto';
-  font-size: 24px;
-  font-weight: 500;
-  margin-bottom: 4px;
-}
-
-.cart-summary-span-el {
-  color: #171f46;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.cart-summary-total-count {
-  color: #616e7c;
-  font-family: 'Roboto';
-  font-size: 16px;
-  margin-top: 0px;
-}
-
-.cart-summary-checkout-button {
-  background-color: #0b69ff;
-  border: none;
+  padding: 20px;
   border-radius: 4px;
-  color: #ffffff;
-  font-family: 'Roboto';
-  font-size: 16px;
-  font-weight: 500;
-  height: 40px;
-  width: 40%;
-  margin-top: 10px;
-  margin-bottom: 30px;
+}
+
+.payment-close-btn {
+  align-self: flex-end;
+  background-color: transparent;
+  border: none;
+  margin-bottom: 20px;
+}
+
+.payment-close-icon {
+  height: 20px;
+  width: 20px;
   cursor: pointer;
   outline: none;
 }
 
+.payment-methods {
+  background-color: transparent;
+  border: 1px solid #b7bec5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  width: 100%;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.payment-icon-name-card {
+  display: flex;
+  align-items: center;
+}
+
+.current-payment-method {
+  background-color: transparent;
+  border: 1px solid #b7bec5;
+  cursor: pointer;
+  outline: none;
+}
+
+.payment-icons {
+  height: 24px;
+  width: 24px;
+  margin-right: 16px;
+}
+
+.payment-name {
+  color: #3a3347;
+  font-family: 'Roboto';
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.payment-enable-disable {
+  color: #d4360a;
+  font-family: 'Roboto';
+  font-size: 10px;
+  font-weight: 700;
+  text-align: right;
+}
+
+.current-payment-enable {
+  color: #0f6346;
+}
+
+.product-quantity-price-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 0px;
+}
+
+.total-quantity-price-name {
+  color: #e90909;
+  font-family: 'Roboto';
+  font-size: 16px;
+  margin-top: 0px;
+  font-weight: 500;
+  align-self: flex-end;
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+}
+
+.total-value-of-quantity-price {
+  color: #3a3347;
+  font-family: 'Roboto';
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.confirm-order-btn {
+  background-color: transparent;
+  border: 1px solid #b7bec5;
+  border-radius: 4px;
+  font-family: 'Roboto';
+  font-size: 14px;
+  font-weight: 500;
+  height: 44px;
+  width: 110px;
+  color: #12022f;
+  cursor: pointer;
+  outline: none;
+  align-self: flex-end;
+}
+
+.payment-success-card {
+  background-color: #23a241;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.payment-success-desp {
+  color: #ffffff;
+  font-family: 'Roboto';
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.confirm-shopping-link {
+  text-decoration: none;
+}
+
+.payment-success-continue-shopping-btn {
+  background-color: #3b82f6;
+  border: none;
+  border-radius: 4px;
+  color: #ffffff;
+  font-family: 'Roboto';
+  font-size: 14px;
+  height: 40px;
+  width: 144px;
+  cursor: pointer;
+  outline: none;
 }

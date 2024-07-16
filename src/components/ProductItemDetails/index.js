@@ -114,7 +114,8 @@ class ProductItemDetails extends Component {
   renderProductDetailsView = () => (
     <CartContext.Consumer>
       {value => {
-        const {productData, quantity, similarProductsData} = this.state
+        const {productData, quantity, similarProductsData} =
+          this.state
         const {
           availability,
           brand,
@@ -177,13 +178,15 @@ class ProductItemDetails extends Component {
                     <BsPlusSquare className="quantity-controller-icon" />
                   </button>
                 </div>
-                <button
-                  type="button"
-                  className="button add-to-cart-btn"
-                  onClick={onClickAddToCart}
-                >
-                  ADD TO CART
-                </button>
+                <div className="product-details-button-card">
+                  <button
+                    type="button"
+                    className="button add-to-cart-btn"
+                    onClick={onClickAddToCart}
+                  >
+                    ADD TO CART
+                  </button>
+                </div>
               </div>
             </div>
             <h1 className="similar-products-heading">Similar Products</h1>
