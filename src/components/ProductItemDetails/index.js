@@ -114,8 +114,7 @@ class ProductItemDetails extends Component {
   renderProductDetailsView = () => (
     <CartContext.Consumer>
       {value => {
-        const {productData, quantity, similarProductsData} =
-          this.state
+        const {productData, quantity, similarProductsData} = this.state
         const {
           availability,
           brand,
@@ -128,7 +127,7 @@ class ProductItemDetails extends Component {
         } = productData
         const {addCartItem} = value
         const onClickAddToCart = () => {
-          addCartItem({...productData, quantity: quantity})
+          addCartItem({...productData, quantity})
         }
 
         return (
@@ -161,6 +160,7 @@ class ProductItemDetails extends Component {
                 <hr className="horizontal-line" />
                 <div className="quantity-container">
                   <button
+                    aria-label="minus"
                     type="button"
                     className="quantity-controller-button"
                     onClick={this.onDecrementQuantity}
@@ -170,6 +170,7 @@ class ProductItemDetails extends Component {
                   </button>
                   <p className="quantity">{quantity}</p>
                   <button
+                    aria-label="plus"
                     type="button"
                     className="quantity-controller-button"
                     onClick={this.onIncrementQuantity}

@@ -43,7 +43,10 @@ class CartSummary extends Component {
           })
 
           const cartListCount = cartList.length
+          const cardPayment = true
           const netbanking = true
+          const upiPayment = true
+          const walletPayment = true
 
           return (
             <div className="cart-summary-card">
@@ -84,8 +87,20 @@ class CartSummary extends Component {
                       </div>
                     ) : (
                       <div className="payment-card">
-                        <button className="payment-close-btn" onClick={close}>
+                        <button
+                          aria-label="payment icon"
+                          className="payment-close-btn"
+                          onClick={close}
+                        >
                           <IoMdClose className="payment-close-icon" />
+                        </button>
+
+                        <button
+                          disabled={cardPayment}
+                          type="button"
+                          className="payment-methods"
+                        >
+                          Card
                         </button>
 
                         <button
@@ -94,6 +109,22 @@ class CartSummary extends Component {
                           className="payment-methods"
                         >
                           Net Banking
+                        </button>
+
+                        <button
+                          disabled={upiPayment}
+                          type="button"
+                          className="payment-methods"
+                        >
+                          UPI
+                        </button>
+
+                        <button
+                          disabled={walletPayment}
+                          type="button"
+                          className="payment-methods"
+                        >
+                          Wallet
                         </button>
 
                         <button
