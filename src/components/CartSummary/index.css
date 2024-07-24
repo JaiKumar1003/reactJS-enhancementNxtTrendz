@@ -121,6 +121,7 @@
   font-size: 18px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding: 20px;
   border-radius: 4px;
 }
@@ -139,17 +140,30 @@
   outline: none;
 }
 
+.payment-methods-confirm-order-card {
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+  width: 100%;
+}
+
+.payment-methods-card {
+  display: flex;
+  flex-direction: column;
+  width: 48%;
+}
+
 .payment-methods {
   background-color: transparent;
   border: 1px solid #b7bec5;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 40px;
+  height: 30px;
   width: 100%;
   border-radius: 4px;
   padding: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 6px;
 }
 
 .payment-icon-name-card {
@@ -160,8 +174,13 @@
 .current-payment-method {
   background-color: transparent;
   border: 1px solid #b7bec5;
+  height: 40px;
   cursor: pointer;
   outline: none;
+  font-family: 'Roboto';
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 0px;
 }
 
 .payment-icons {
@@ -193,7 +212,10 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  width: 44%;
+  align-self: flex-end;
   margin-top: 0px;
+  margin-right: 20px;
 }
 
 .total-quantity-price-name {
@@ -205,7 +227,7 @@
   align-self: flex-end;
   display: flex;
   justify-content: space-between;
-  width: 50%;
+  width: 80%;
 }
 
 .total-value-of-quantity-price {
@@ -216,15 +238,12 @@
 }
 
 .confirm-order-btn {
-  background-color: transparent;
-  border: 1px solid #b7bec5;
   border-radius: 4px;
   font-family: 'Roboto';
   font-size: 14px;
-  font-weight: 500;
-  height: 44px;
+  font-weight: 700;
+  height: 36px;
   width: 110px;
-  color: #12022f;
   cursor: pointer;
   outline: none;
   align-self: flex-end;
@@ -262,4 +281,167 @@
   width: 144px;
   cursor: pointer;
   outline: none;
+}
+
+.payment-method-name {
+  color: #000000;
+  font-family: 'Roboto';
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.payment-heading {
+  color: #000000;
+  font-family: 'Roboto';
+  font-size: 22px;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 768px) {
+  .payment-heading {
+    color: #000000;
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .payment-card {
+    background-color: #ffffff;
+    height: 100vh;
+    width: 100vw;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 4px;
+  }
+
+  .payment-close-btn {
+    align-self: flex-end;
+    background-color: transparent;
+    border: none;
+    margin-bottom: 20px;
+  }
+
+  .payment-close-icon {
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+    outline: none;
+  }
+
+  .payment-methods-confirm-order-card {
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    width: 100%;
+  }
+
+  .payment-methods-card {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+  }
+
+  .payment-methods {
+    background-color: transparent;
+    border: 1px solid #b7bec5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
+    width: 100%;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 6px;
+  }
+
+  .payment-method-name {
+    font-size: 12px;
+  }
+
+  .payment-icon-name-card {
+    display: flex;
+    align-items: center;
+  }
+
+  .current-payment-method {
+    background-color: transparent;
+    border: 1px solid #b7bec5;
+    height: 34px;
+    cursor: pointer;
+    outline: none;
+    font-family: 'Roboto';
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 0px;
+  }
+
+  .payment-icons {
+    height: 24px;
+    width: 24px;
+    margin-right: 16px;
+  }
+
+  .payment-name {
+    color: #3a3347;
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .payment-enable-disable {
+    color: #d4360a;
+    font-family: 'Roboto';
+    font-size: 10px;
+    font-weight: 700;
+    text-align: right;
+  }
+
+  .current-payment-enable {
+    color: #0f6346;
+  }
+
+  .product-quantity-price-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 44%;
+    align-self: flex-end;
+    margin-top: 0px;
+    margin-right: 20px;
+  }
+
+  .total-quantity-price-name {
+    color: #e90909;
+    font-family: 'Roboto';
+    font-size: 12px;
+    margin-top: 0px;
+    font-weight: 500;
+    align-self: flex-end;
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+  }
+
+  .total-value-of-quantity-price {
+    color: #3a3347;
+    font-family: 'Roboto';
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .confirm-order-btn {
+    border-radius: 4px;
+    font-family: 'Roboto';
+    font-size: 12px;
+    font-weight: 500;
+    height: 30px;
+    width: 90px;
+    cursor: pointer;
+    outline: none;
+    align-self: flex-end;
+  }
 }

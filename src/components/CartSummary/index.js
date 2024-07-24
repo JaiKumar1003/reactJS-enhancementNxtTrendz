@@ -88,81 +88,110 @@ class CartSummary extends Component {
                     ) : (
                       <div className="payment-card">
                         <button
+                          type="button"
                           aria-label="payment icon"
                           className="payment-close-btn"
                           onClick={close}
                         >
                           <IoMdClose className="payment-close-icon" />
                         </button>
-
-                        <button
-                          disabled={cardPayment}
-                          type="button"
-                          className="payment-methods"
-                        >
-                          Card
-                        </button>
-
-                        <button
-                          disabled={netbanking}
-                          type="button"
-                          className="payment-methods"
-                        >
-                          Net Banking
-                        </button>
-
-                        <button
-                          disabled={upiPayment}
-                          type="button"
-                          className="payment-methods"
-                        >
-                          UPI
-                        </button>
-
-                        <button
-                          disabled={walletPayment}
-                          type="button"
-                          className="payment-methods"
-                        >
-                          Wallet
-                        </button>
-
-                        <button
-                          style={{
-                            backgroundColor: isConfirmed ? '#0f6346' : '',
-                          }}
-                          onClick={this.onClickCashOnDelivery}
-                          type="button"
-                          className="payment-methods current-payment-method"
-                        >
-                          Cash on Delivery
-                        </button>
-                        <div className="product-quantity-price-card">
-                          <p className="total-quantity-price-name">
-                            Total No of Items:{' '}
-                            <span className="total-value-of-quantity-price">
-                              {cartFullQuantity}
-                            </span>
-                          </p>
-                          <p className="total-quantity-price-name">
-                            Total Amount:{' '}
-                            <span className="total-value-of-quantity-price">
-                              Rs {cartFullPrice}/-
-                            </span>
-                          </p>
+                        <div className="payment-methods-confirm-order-card">
+                          <div className="payment-methods-card">
+                            <p className="payment-heading">Payment Options</p>
+                            <input
+                              disabled={cardPayment}
+                              type="button"
+                              className="payment-methods"
+                              id="card"
+                            />
+                            <label
+                              htmlFor="card"
+                              className="payment-method-name"
+                            >
+                              Card
+                            </label>
+                            <input
+                              disabled={netbanking}
+                              type="button"
+                              className="payment-methods"
+                              id="nb"
+                            />
+                            <label htmlFor="nb" className="payment-method-name">
+                              Net Banking
+                            </label>
+                            <input
+                              disabled={upiPayment}
+                              type="button"
+                              className="payment-methods"
+                              id="upi"
+                            />
+                            <label
+                              htmlFor="upi"
+                              className="payment-method-name"
+                            >
+                              UPI
+                            </label>
+                            <input
+                              disabled={walletPayment}
+                              type="button"
+                              className="payment-methods"
+                              id="wallet"
+                            />
+                            <label
+                              htmlFor="wallet"
+                              className="payment-method-name"
+                            >
+                              Wallet
+                            </label>
+                            <button
+                              style={{
+                                backgroundColor: isConfirmed
+                                  ? '#0f6346'
+                                  : 'transparent',
+                                color: isConfirmed ? '#ffffff' : '#000000',
+                                border: isConfirmed
+                                  ? 'none'
+                                  : '1px solid #b7bec5',
+                              }}
+                              onClick={this.onClickCashOnDelivery}
+                              type="button"
+                              className="payment-methods current-payment-method"
+                            >
+                              Cash on Delivery
+                            </button>
+                          </div>
+                          <div className="product-quantity-price-card">
+                            <p className="total-quantity-price-name">
+                              Total No of Items:{' '}
+                              <span className="total-value-of-quantity-price">
+                                {cartFullQuantity}
+                              </span>
+                            </p>
+                            <p className="total-quantity-price-name">
+                              Total Amount:{' '}
+                              <span className="total-value-of-quantity-price">
+                                Rs {cartFullPrice}/-
+                              </span>
+                            </p>
+                            <button
+                              type="button"
+                              disabled={!isConfirmed}
+                              style={{
+                                backgroundColor: isConfirmed
+                                  ? '#0f6346'
+                                  : 'transparent',
+                                color: isConfirmed ? '#ffffff' : '#000000',
+                                border: isConfirmed
+                                  ? 'none'
+                                  : '1px solid #bab5b5',
+                              }}
+                              className="confirm-order-btn"
+                              onClick={this.onClickConfirmOrder}
+                            >
+                              Confirm Order
+                            </button>
+                          </div>
                         </div>
-                        <button
-                          type="button"
-                          disabled={!isConfirmed}
-                          style={{
-                            backgroundColor: isConfirmed ? '#0f6346' : '',
-                            color: isConfirmed ? '#ffffff' : '',
-                          }}
-                          className="confirm-order-btn"
-                          onClick={this.onClickConfirmOrder}
-                        >
-                          Confirm Order
-                        </button>
                       </div>
                     )}
                   </div>
