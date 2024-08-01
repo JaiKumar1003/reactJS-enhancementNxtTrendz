@@ -96,70 +96,84 @@ class CartSummary extends Component {
                           <IoMdClose className="payment-close-icon" />
                         </button>
                         <div className="payment-methods-confirm-order-card">
-                          <div className="payment-methods-card">
+                          <form className="payment-methods-card">
                             <p className="payment-heading">Payment Options</p>
-                            <input
-                              disabled={cardPayment}
-                              type="button"
-                              className="payment-methods"
-                              id="card"
-                            />
-                            <label
-                              htmlFor="card"
-                              className="payment-method-name"
-                            >
-                              Card
-                            </label>
-                            <input
-                              disabled={netbanking}
-                              type="button"
-                              className="payment-methods"
-                              id="nb"
-                            />
-                            <label htmlFor="nb" className="payment-method-name">
-                              Net Banking
-                            </label>
-                            <input
-                              disabled={upiPayment}
-                              type="button"
-                              className="payment-methods"
-                              id="upi"
-                            />
-                            <label
-                              htmlFor="upi"
-                              className="payment-method-name"
-                            >
-                              UPI
-                            </label>
-                            <input
-                              disabled={walletPayment}
-                              type="button"
-                              className="payment-methods"
-                              id="wallet"
-                            />
-                            <label
-                              htmlFor="wallet"
-                              className="payment-method-name"
-                            >
-                              Wallet
-                            </label>
-                            <button
-                              style={{
-                                backgroundColor: isConfirmed
-                                  ? '#0f6346'
-                                  : 'transparent',
-                                color: isConfirmed ? '#ffffff' : '#000000',
-                                border: isConfirmed
-                                  ? 'none'
-                                  : '1px solid #b7bec5',
-                              }}
-                              onClick={this.onClickCashOnDelivery}
-                              type="button"
-                              className="payment-methods current-payment-method"
-                            >
-                              Cash on Delivery
-                            </button>
-                          </div>
+                            <div className="payment-option-input-label-card">
+                              <input
+                                disabled={cardPayment}
+                                type="radio"
+                                className="payment-option-radio-input"
+                                id="card"
+                                name="payment"
+                              />
+                              <label
+                                htmlFor="card"
+                                className="payment-option-name"
+                              >
+                                Card
+                              </label>
+                            </div>
+                            <div className="payment-option-input-label-card">
+                              <input
+                                disabled={netbanking}
+                                type="radio"
+                                className="payment-option-radio-input"
+                                id="nb"
+                                name="payment"
+                              />
+                              <label
+                                htmlFor="nb"
+                                className="payment-option-name"
+                              >
+                                Net Banking
+                              </label>
+                            </div>
+                            <div className="payment-option-input-label-card">
+                              <input
+                                disabled={upiPayment}
+                                type="radio"
+                                className="payment-option-radio-input"
+                                id="upi"
+                                name="payment"
+                              />
+                              <label
+                                htmlFor="upi"
+                                className="payment-option-name"
+                              >
+                                UPI
+                              </label>
+                            </div>
+                            <div className="payment-option-input-label-card">
+                              <input
+                                disabled={walletPayment}
+                                type="radio"
+                                className="payment-option-radio-input"
+                                id="wallet"
+                                name="payment"
+                              />
+                              <label
+                                htmlFor="wallet"
+                                className="payment-option-name"
+                              >
+                                Wallet
+                              </label>
+                            </div>
+                            <div className="payment-option-input-label-card">
+                              <input
+                                type="radio"
+                                className="payment-option-radio-input selected-button"
+                                id="cashOnDelivery"
+                                name="payment"
+                                onClick={this.onClickCashOnDelivery}
+                              />
+                              <label
+                                htmlFor="cashOnDelivery"
+                                className="payment-option-name selected-button"
+                              >
+                                Cash on Delivery
+                              </label>
+                            </div>
+                          </form>
                           <div className="product-quantity-price-card">
                             <p className="total-quantity-price-name">
                               Total No of Items:{' '}
@@ -184,6 +198,8 @@ class CartSummary extends Component {
                                 border: isConfirmed
                                   ? 'none'
                                   : '1px solid #bab5b5',
+                                cursor: isConfirmed && 'pointer',
+                                outline: isConfirmed && 'none',
                               }}
                               className="confirm-order-btn"
                               onClick={this.onClickConfirmOrder}

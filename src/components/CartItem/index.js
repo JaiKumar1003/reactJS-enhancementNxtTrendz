@@ -60,22 +60,20 @@ const CartItem = props => (
             <div className="total-price-remove-container">
               <p className="cart-total-price">Rs {price * quantity}/-</p>
               <button
+                data-testid="remove"
                 className="remove-button"
                 type="button"
                 onClick={onRemoveCartItem}
               >
-                Remove
+                <AiFillCloseCircle
+                  className="remove-cart-item-icon"
+                  color="#616E7C"
+                  size={20}
+                />
+                <span className="remove-text-span-element">Remove</span>
               </button>
             </div>
           </div>
-          <button
-            aria-label="removeItem"
-            className="delete-button"
-            type="button"
-            onClick={onRemoveCartItem}
-          >
-            <AiFillCloseCircle color="#616E7C" size={20} />
-          </button>
         </li>
       )
     }}
